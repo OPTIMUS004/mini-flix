@@ -21,7 +21,7 @@
 								<span>&times;</span>
 								</button>
 							</div>
-							<div class="modal-body" (click)="closeModal()">
+							<div class="modal-body">
 								<a class="text-dark" *ngFor="let session of foundSessions" [routerLink]="['/miniflix', session.id]"  >{{session?.Title}}
 								</a>
 								<span *ngIf="foundSessions.length===0">No such title here</span>

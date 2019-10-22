@@ -6,14 +6,15 @@ export class AuthService{
 	currentUser: IUser
 
 	validateUser(userName: string, password: string){
-			this.currentUser= {	id: 1,
-								username: 'Integral',
-								password: 'we',
-								firstName: 'taiwo',
-								lastName: 'ayo',
-								favorite:  []
-							  }
-		}
+			this.currentUser= {
+				id: 1,
+				username: 'Integral',
+				password: 'we',
+				firstName: 'taiwo',
+				lastName: 'ayo',
+				favorite: []
+				}
+			}
 
 isAuthenticated(){
 	return !!this.currentUser;
@@ -30,15 +31,15 @@ userHasLiked(data){
 	}else{ return false; }
 }         
 		getFavorite(){
-			return this.currentUser.favorite
+			return this.currentUser.favorite;
 		}
 
 	
 
-updateProfile(userName: string, password: string){
+updateProfile(userName, password){
 	this.currentUser.username = userName;
 	this.currentUser.password = password; 
-}
+	}
 }
 
 const users = [

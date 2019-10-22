@@ -54,7 +54,7 @@ import { AuthService } from '../user/auth.service'
 export class FlixThumbnailComponent{
 	@Input() data: any
 
-constructor( private auth:AuthService){}
+constructor( public auth:AuthService){}
 
 toggleData(datum){
 		if(this.userHasLiked(datum)){
