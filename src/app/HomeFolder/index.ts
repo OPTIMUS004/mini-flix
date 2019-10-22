@@ -1,0 +1,7 @@
+export * from './flix-list.component'
+export * from './flix-thumbnail.component'
+export * from './movie-list.component'
+export * from './series-list.component'
+export * from './favorite.component'
+export * from './shared/index'
+export * from './flix-details/index'
