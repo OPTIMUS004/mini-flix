@@ -1,21 +1,28 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
-	selector: 'favorite',
+	selector: 'like',
 	template: `
 		<div class="votingWidgetContainer pointable" (click)="onClick()">
-			<div class ="well votingWidget">
-				<div class="votingButton col">
-					<i class="glyphicon glyphicon-heart" [style.color]="iconColor">+</i>
+			<div class ="well">
+				<div>
+					<i class="fa fa-heart" [style.color]="iconColor">Add+</i>
 
 				</div>
 			</div>
 		</div>
 		`,
-	styleUrls: ['./favorite.component.css']
+	styles: [`
+				.pointable{
+					text-align: center;
+				}
+				.pointable:hover{
+					cursor: pointer;
+				}
+			`]
 })
 
-export class FavoriteComponent {
+export class LikeComponent {
 	
 	@Input() set liked(val) {
 		this.iconColor = val ? 'red' : 'white';

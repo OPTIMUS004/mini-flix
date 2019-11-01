@@ -7,6 +7,8 @@ import { catchError } from 'rxjs/operators';
 
 export class FlixService {
 
+  uri = 'http://localhost:4000/'
+
 constructor(private http: HttpClient){
   
 }
@@ -14,12 +16,13 @@ constructor(private http: HttpClient){
 /*
     return this.http.get('http://.omdbapi.com/?i=tt3896198&apikey=2ea85c97')
     .pipe(catchError(this.handleError('getMovieList', [])));
-*/
+*/  
+    return this.http.get(`${this.uri}/movies`)
+    .pipe(catchError(this.handleError('getMovieList', [])))
 
-
-    let subject = new Subject()
-    setTimeout(()=> {subject.next(flixData); subject.complete();}, 100)
-		return subject
+   // let subject = new Subject()
+  //  setTimeout(()=> {subject.next(flixData); subject.complete();}, 100)
+	//  return subject
     
 	}
 

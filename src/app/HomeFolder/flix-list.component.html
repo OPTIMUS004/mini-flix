@@ -3,7 +3,7 @@
 				<h2>Trending Movies and Tv Shows</h2>
 				<hr>
 				<div class="row col-sm-10">
-					<div class="formfield">
+					<div class="formfield" [@EnterLeave]="flyIn" >
 						<form #searchForm ="ngForm" id="searchForm" (ngSubmit)= "searchSessions(searchTerm); searchForm.resetForm()"  class="form-inline" autocomplete="off">
 							<div class="form-group">
 								<input type="text" placeholder="Search Title" [(ngModel)]="searchTerm" name="searchTerm" class="form-control" />
@@ -21,14 +21,13 @@
 								<span>&times;</span>
 								</button>
 							</div>
-							<div class="modal-body">
+							<div class="modal-body" data-dismiss="modal">
 								<a class="text-dark" *ngFor="let session of foundSessions" [routerLink]="['/miniflix', session.id]"  >{{session?.Title}}
 								</a>
 								<span *ngIf="foundSessions.length===0">No such title here</span>
 							</div>
 						</div>
 					</div>
-				</div>
 				</div>
 				<hr>
 			</div>

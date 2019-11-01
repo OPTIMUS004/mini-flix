@@ -38,5 +38,13 @@ import { AuthService } from '../user/auth.service'
 })
 
 export class NavBarComponent {
+	closeDropdown: boolean = false;
+
 	constructor( public authService:AuthService){}
+	
+	logout(){
+		this.closeDropdown = true;
+		console.log(this.closeDropdown)
+		this.authService.logout();
+	}
 }

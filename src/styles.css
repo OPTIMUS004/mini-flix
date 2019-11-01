@@ -11,3 +11,7 @@ hr{
 	padding-right: 10px;
 	border-radius: 4px;
 }
+.form-control{
+		border-radius: 0;
+		background-clip: padding 0;
+	}

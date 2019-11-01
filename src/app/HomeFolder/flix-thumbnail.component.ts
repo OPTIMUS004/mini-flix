@@ -1,54 +1,74 @@
 import { Component, Input } from '@angular/core';
+import { trigger,animate,style,transition,state } from '@angular/animations'
 import { AuthService } from '../user/auth.service'
 
 @Component ({
 	selector: 'flix-thumbnail',
 	template: `
 	
-			<div class="container">
-				<div class="row bg-dark col-2 center">
-					<img src="{{data?.Poster}}" alt="{{data?.Title}}" class="col">
-					<div class="col">Title: {{data?.Title}}</div>
-					<div class="col">Duration: {{data?.Runtime}}</div>
-					<div class="col">Release Date: {{data?.Released}}</div>
-					<div class="col btn-norm text-center mt-2" [routerLink]="['/miniflix',  data.id]"><a>More Details</a></div>
-					<div *ngIf="auth?.isAuthenticated()">
-					<favorite (like)="toggleData(data)" [liked]="userHasLiked(data)">		
-					</favorite>
+			<div class="container ">
+				<div class="row" [@fadeInOut]>
+					<div class="column" >
+						<div class="card">
+							<img src="{{data?.Poster}}" alt="{{data?.Title}}" class="col">
+							<div class="container bg-dark">
+								<h4>{{data?.Title}}</h4>
+								<p class="title">Duration: {{data?.Runtime}}</p>
+								<p>Release Date: {{data?.Released}}</p>
+								<p class="btn-norm text-center mt-2" [routerLink]="['/miniflix',  data.id]"><a>More Details</a></p>
+								<p *ngIf="auth?.isAuthenticated()">
+									<like (like)="toggleData(data)" [liked]="userHasLiked(data)">		
+									</like>
+								</p>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 	`,
 	styles: [`
-		.row{
-			color: white;
-			opacity: 0.9;
-			padding: 15px 5px;
-			margin: 20px 25px;
-			display: inline-block;
-			float:left;
-			font-size: 14px;
-			height: 500px;
-			max-width:25%;
-			justify-content: center;
-		}
-		a{
-			margin-left:0;
-		}
-		a:hover{
-			cursor: pointer;
-			opacity: 0.9;
-		}
+				.row{
+					float: left;
+					width:22%;
+					margin-bottom: 30px;
+					padding: 0 8px;
+					margin-right: 16px;
+					border: none;
 
+				}
+				.card{
+					box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+					border: 0;
+				}
+				.container{
+					padding: 0 16px;
+				}
+				.btn-norm:hover{
+					cursor: pointer;
+				}
+		
 		@media screen and (max-width: 900px){
 
 			.row{
-				height: 320px;
-				max-width:35%;
+				display: block;
+				width: 30.33%;
+			}
+		}
+		@media screen and (max-width: 650px){
+
+			.row{
+				display: block;
+				width: 100%;
 			}
 		}
 
-	`]
+	`],
+	animations: [trigger('fadeInOut', [
+			state('void',style({opacity: 0
+			})),
+			transition('void<=>*',animate(2000))
+		]
+		)]
 })
 
 export class FlixThumbnailComponent{

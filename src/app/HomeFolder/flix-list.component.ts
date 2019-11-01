@@ -1,3 +1,4 @@
+import { trigger,animate,style,transition,state } from '@angular/animations'
 import { Component, OnInit } from '@angular/core';
 import { FlixService } from './shared/flix.service';
 import { ActivatedRoute } from '@angular/router'
@@ -10,7 +11,28 @@ import { ActivatedRoute } from '@angular/router'
 			.show{
 				display: none;
 			}
-	`]
+			.form-control{
+				border-radius: 0;
+				background-clip: 0;
+			}
+			.btn-default{
+				background-color: #007bff;
+				border: 1px solid #007bff;
+				outline: 0;
+				border-radius: 0;
+
+			}
+	`],
+	animations: [trigger('EnterLeave',[
+		state('flyIn', style({transform:'translateX(0)'})),
+		transition(':enter',[
+		style({transform:'translateX(100%)'}),
+		animate('0.5s 300ms ease-in')
+		]),
+		transition(':leave',[
+		animate('0.3s ease-out',style({transform:'translateX(-100%)'}))
+		])
+		])]
 
 })
 

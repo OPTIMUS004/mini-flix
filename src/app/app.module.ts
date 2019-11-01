@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AuthService } from './user/auth.service'
 import { HttpClientModule } from '@angular/common/http'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
         FlixListComponent,
@@ -14,7 +15,7 @@ import {
         FlixService,
         FlixListResolver,
         FlixRouteActivator,
-        FavoriteComponent
+        LikeComponent
 
 
 } from './HomeFolder/index'
@@ -35,14 +36,15 @@ import { appRoutes } from './routes'
     SeriesListComponent,
     Error404Component,
     CollapsibleWellComponent,
-    FavoriteComponent
+    LikeComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     FlixService,
