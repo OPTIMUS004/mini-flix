@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
 		}
 
 	}
-	toggleLogin(data){
+	toggleLogin(){
 		this.addMode = false;
 	}
 	cancel(){
