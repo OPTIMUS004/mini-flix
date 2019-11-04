@@ -3,7 +3,7 @@
 				<h2>Trending Movies and Tv Shows</h2>
 				<hr>
 				<div class="row col-sm-10">
-					<div class="formfield" [@EnterLeave]="flyIn" >
+					<div class="formfield" [@EnterLeave]>
 						<form #searchForm ="ngForm" id="searchForm" (ngSubmit)= "searchSessions(searchTerm); searchForm.resetForm()"  class="form-inline" autocomplete="off">
 							<div class="form-group">
 								<input type="text" placeholder="Search Title" [(ngModel)]="searchTerm" name="searchTerm" class="form-control" />
