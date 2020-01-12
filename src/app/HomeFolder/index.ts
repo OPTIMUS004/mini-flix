@@ -1,4 +1,4 @@
-export * from './welcome.component'
+export * from './flix-list.component'
 export * from './flix-thumbnail.component'
 export * from './movie-list.component'
 export * from './series-list.component'

@@ -1,33 +1,36 @@
-<div class="intro">
-	<span class="flip-boldness">			
-		M<span class="flip-color">F</span>
-	</span> 
-	<span class="flip-size"> 
-		PRESENTS
-	</span>
-</div>
-<div class="flex-container">
-	<div class="row col-5 flex-item content-one" >
-		<collapsible-well>
-		<div well-title>
-			<span class="flip-title" title="Click to toggle details ">{{flixData?.Title | uppercase}}
-			</span><br/><br>
+<div class="container">
+	<div>
+		<span class="flip-boldness">			
+			M<span class="flip-color">F</span>
+		</span> 
+		<span class="flip-size"> 
+			PRESENTS
+		</span>
+	</div>
+	<div></div>
+	<div class="flex-container">
+		<div class="row col-5 flex-item content-one" >
+			<collapsible-well>
+			<div well-title>
+				<span class="flip-title" title="Click to toggle details ">{{flixData?.Title | uppercase}}
+				</span><br/><br>
+			</div>
+			<div well-body class="details text-light">
+				<div class="flip-plot">Genre: {{flixData?.Genre}}</div>
+				<div class="flip-plot">Type: {{flixData?.Type}}</div>
+				<div class="flip-plot">Total Season: {{flixData?.totalSeason}}</div>
+				<div class="flip-plot">Runtime: {{flixData?.Runtime}}</div>
+				<div class="flip-plot">Writer: {{flixData?.Writer}}</div>
+				<div class="flip-plot">Released:<br> {{flixData?.Released}}</div>
+				<div class="flip-plot">Plot:<br> {{flixData?.Plot}}</div>
+				<div class="flip-plot">Rated:<br> {{flixData?.Rated}}</div>
+			</div>
+			</collapsible-well>
 		</div>
-		<div well-body class="details text-light">
-			<div class="flip-plot">Genre: {{flixData?.Genre}}</div>
-			<div class="flip-plot">Type: {{flixData?.Type}}</div>
-			<div class="flip-plot">Total Season: {{flixData?.totalSeason}}</div>
-			<div class="flip-plot">Runtime: {{flixData?.Runtime}}</div>
-			<div class="flip-plot">Writer: {{flixData?.Writer}}</div>
-			<div class="flip-plot">Released:<br> {{flixData?.Released}}</div>
-			<div class="flip-plot">Plot:<br> {{flixData?.Plot}}</div>
-			<div class="flip-plot">Rated:<br> {{flixData?.Rated}}</div>
-
+		<div class="flex-item poster row col-5">
+			<img [src]="flixData?.Poster" [alt]="flixData?.Title" class ="event-img"/>
 		</div>
-		</collapsible-well>
 	</div>
 	
-	<div class="row col-5 poster">
-		<img [src]="flixData?.Poster" [alt]="flixData?.Title" class ="event-img"/>
-	</div>
-</div>
+
+			

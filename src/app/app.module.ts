@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from './user/auth.service';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { AuthService } from './user/auth.service'
+import { HttpClientModule } from '@angular/common/http'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
-        WelcomeComponent,
+        FlixListComponent,
         SeriesListComponent,
         MovieListComponent,
         FlixThumbnailComponent,
@@ -18,32 +18,24 @@ import {
         LikeComponent
 
 
-} from './HomeFolder/index';
-import { AOSAppComponent } from './aos-app.component';
+} from './HomeFolder/index'
+import { FlixAppComponent } from './flix-app.component';
 import { NavBarComponent } from './nav/nav-bar.component';
-import { FooterComponent } from './footer/app-footer.component'
-import { Error404Component } from './errors/404.component';
-import { CollapsibleWellComponent } from './common/collapsible-well.component';
-import { SimpleModalComponent } from './common/simple-modal.component';
-import { appRoutes } from './routes';
-import { JQ_TOKEN } from './common/jQuery.service';
-import { ModalTriggerDirective } from './common/modal-trigger.directive';
+import { Error404Component } from './errors/404.component'
+import { CollapsibleWellComponent } from './common/collapsible-well.component'
+import { appRoutes } from './routes'
 
-const jQuery = window['$'];
 @NgModule({
   declarations: [
-   AOSAppComponent,
-   WelcomeComponent,
+   FlixAppComponent,
+    FlixListComponent,
     FlixThumbnailComponent,
-    FooterComponent,
     DetailsPageComponent,
     NavBarComponent,
     MovieListComponent,
-    ModalTriggerDirective,
     SeriesListComponent,
     Error404Component,
     CollapsibleWellComponent,
-    SimpleModalComponent,
     LikeComponent
   ],
   imports: [
@@ -59,10 +51,7 @@ const jQuery = window['$'];
     FlixRouteActivator,
     FlixListResolver,
     AuthService,
-    { provide: JQ_TOKEN, useValue: jQuery }
   ],
-  exports: [LikeComponent],
-
-  bootstrap: [AOSAppComponent]
+  bootstrap: [FlixAppComponent]
 })
 export class AppModule { }

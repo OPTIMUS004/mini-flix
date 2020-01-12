@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { 
-		WelcomeComponent,
+		FlixListComponent,
 		MovieListComponent,
 		SeriesListComponent,
 		DetailsPageComponent,
@@ -14,7 +14,7 @@ import { Error404Component } from './errors/404.component';
 
 export const appRoutes: Routes = [
 
-	{ path: 'miniflix', component: WelcomeComponent, resolve:{data:FlixListResolver} },
+	{ path: 'miniflix', component: FlixListComponent, resolve:{data:FlixListResolver} },
 	{ path: 'miniflix/movies', component: MovieListComponent, resolve:{data:FlixListResolver} },
 	{ path: 'miniflix/series', component: SeriesListComponent, resolve:{data:FlixListResolver} },
 	{ path: '', redirectTo: '/miniflix', pathMatch: 'full' },

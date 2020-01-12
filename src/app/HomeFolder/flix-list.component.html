@@ -7,9 +7,9 @@
 						<form #searchForm ="ngForm" id="searchForm" (ngSubmit)= "searchSessions(searchTerm); searchForm.resetForm()"  class="form-inline" autocomplete="off">
 							<div class="form-group">
 								<input type="text" placeholder="Search Title" [(ngModel)]="searchTerm" name="searchTerm" class="form-control" />
+								<button type="submit" class="btn btn-default text-light" data-toggle="modal" data-target="#myModal">Search
+								</button>
 							</div>
-							<button type="submit" class="btn btn-default text-light" data-toggle="modal" data-target="#myModal">Search
-							</button>
 						</form>
 				</div>
 				<div class="modal fade" id="myModal" role="dialog">
@@ -31,5 +31,6 @@
 				</div>
 				<hr>
 			</div>
-
-			<flix-thumbnail *ngFor="let datum of flixData" [data]="datum"></flix-thumbnail>
+			<div class="flex-container">
+				<flix-thumbnail *ngFor="let datum of flixData" [data]="datum"></flix-thumbnail>
+			</div>

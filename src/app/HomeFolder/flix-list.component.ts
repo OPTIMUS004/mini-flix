@@ -22,6 +22,12 @@ import { ActivatedRoute } from '@angular/router'
 				border-radius: 0;
 
 			}
+			.flex-container{
+				display: flex;
+				flex-flow: row wrap;
+				justify-content: center;
+				justify-item: center;
+			}
 	`],
 	animations: [trigger('EnterLeave',[
 		state('flyIn', style({transform:'translateX(0)'})),
