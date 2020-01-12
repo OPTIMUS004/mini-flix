@@ -4,7 +4,8 @@ import { Component } from '@angular/core';
   selector: 'flix-app',
   template: 	`
   		<nav-bar></nav-bar>
-  		<router-outlet></router-outlet>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
   `
 })
 export class FlixAppComponent {

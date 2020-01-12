@@ -24,6 +24,7 @@ import { NavBarComponent } from './nav/nav-bar.component';
 import { Error404Component } from './errors/404.component'
 import { CollapsibleWellComponent } from './common/collapsible-well.component'
 import { appRoutes } from './routes'
+import { FooterComponent } from './footer/app-footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { appRoutes } from './routes'
     SeriesListComponent,
     Error404Component,
     CollapsibleWellComponent,
-    LikeComponent
+    LikeComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -54,4 +56,4 @@ import { appRoutes } from './routes'
   ],
   bootstrap: [FlixAppComponent]
 })
-export class AppModule { }
+export class AppModule {}
