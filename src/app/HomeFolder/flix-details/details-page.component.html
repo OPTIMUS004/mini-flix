@@ -1,21 +1,19 @@
-<div class="container">
-	<div>
-		<span class="flip-boldness">			
-			M<span class="flip-color">F</span>
-		</span> 
-		<span class="flip-size"> 
-			PRESENTS
-		</span>
-	</div>
-	<div class="row col-5 content-one" >
+<div class="intro">
+	<span class="flip-boldness">			
+		M<span class="flip-color">F</span>
+	</span> 
+	<span class="flip-size"> 
+		PRESENTS
+	</span>
+</div>
+<div class="flex-container">
+	<div class="row col-5 flex-item content-one" >
 		<collapsible-well>
 		<div well-title>
-			<span class="flip-title">{{flixData?.Title | uppercase}}
+			<span class="flip-title" title="Click to toggle details ">{{flixData?.Title | uppercase}}
 			</span><br/><br>
 		</div>
 		<div well-body class="details text-light">
-			
-			
 			<div class="flip-plot">Genre: {{flixData?.Genre}}</div>
 			<div class="flip-plot">Type: {{flixData?.Type}}</div>
 			<div class="flip-plot">Total Season: {{flixData?.totalSeason}}</div>
@@ -29,7 +27,7 @@
 		</collapsible-well>
 	</div>
 	
-	<div class="row col-5">
+	<div class="row col-5 poster">
 		<img [src]="flixData?.Poster" [alt]="flixData?.Title" class ="event-img"/>
 	</div>
 </div>
